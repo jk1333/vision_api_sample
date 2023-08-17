@@ -57,7 +57,7 @@ if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     st.image(bytes_data, "Source", 400)
     with st.spinner('Analyzing...'):
-        results = get_similar_products_file("sandbox-373102", "us-west1", "products", "general-v1", 
+        results = get_similar_products_file(PROJECT_ID, "us-west1", "products", "general-v1", 
                                             bytes_data, None, 4)
 if len(results) > 0:
     cols = st.columns(len(results))
